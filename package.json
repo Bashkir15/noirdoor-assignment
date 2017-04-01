@@ -1,0 +1,21 @@
+{
+  	"name": "noirdoor",
+  	"version": "1.0.0",
+  	"description": "",
+  	"main": "server.js",
+  	"scripts": {
+    	"test": "xo"
+  	},
+
+  	"author": "Forrest Collins",
+  	"license": "ISC",
+  	"devDependencies": {
+    	"eslint-config-xo-react": "^0.11.1",
+    	"eslint-plugin-react": "^6.10.3",
+    	"xo": "^0.18.1"
+  	},
+
+	"xo": {
+		"extends": ["xo-react"]
+	}
+}
