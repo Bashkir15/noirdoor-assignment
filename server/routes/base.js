@@ -18,5 +18,16 @@ export default [
 				index: true
 			}
 		}
+	},
+
+	{
+		method: 'GET',
+		path: '/dist/{file*}',
+		handler: {
+			directory: {
+				path: '../dist',
+				index: true
+			}
+		}
 	}
 ];

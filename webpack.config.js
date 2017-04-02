@@ -26,13 +26,13 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(jsx|js)?$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: ['babel-loader']
 			},
 
 			{
-				test: /\.(jsx|js)?$/,
+				test: /\.jsx?$/,
 				use: ['xo-loader'],
 				enforce: 'pre',
 				include: PATHS.app + '/**/*.+(jsx|js)'
@@ -84,6 +84,14 @@ module.exports = {
 		}),
 
 		new webpack.HotModuleReplacementPlugin(),
+
+		new webpack.LoaderOptionsPlugin({
+			options: {
+				xo: {
+					emitError: true
+				}
+			}
+		}),
 
 		new ExtractTextPlugin('main.css')
 	]
