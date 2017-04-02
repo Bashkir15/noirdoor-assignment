@@ -1,26 +1,33 @@
 import React, { PropTypes } from 'react'
 
+import '../../static/styles/shared/components/nav.sass'
+
 class Nav extends React.Component {
+
 	render() {
-		// add state for sidenav later
+		
 
 		return (
 			<nav className='nav'>
 				<div className='nav-left'>
 					<div className='nav-item'>
-						<a>Link</a>
+						<a>Reccommended</a>
 					</div>
 
 					<div className='nav-item'>
-						<a>Link</a>
+						<a>New Releases</a>
 					</div>
 
 					<div className='nav-item'>
-						<a>Link</a>
+						<a>Top Artists</a>
 					</div>
 
 					<div className='nav-item'>
-						<a>Link</a>
+						<a>Genres</a>
+					</div>
+
+					<div className='nav-item'>
+						<a>Near You</a>
 					</div>
 				</div>
 

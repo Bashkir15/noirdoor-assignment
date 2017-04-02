@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react'
 
+import '../static/styles/shared/config/config'
+
 import Nav from './shared/Nav'
 
 class App extends React.Component {
