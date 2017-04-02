@@ -42,6 +42,7 @@
     "hapi": "^16.1.1",
     "inert": "^4.1.0",
     "require-directory": "^2.1.1",
+    "vision": "^4.1.1",
     "winston": "^2.3.1"
   }
 }

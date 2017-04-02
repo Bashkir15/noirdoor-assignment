@@ -1,20 +1,27 @@
 import Hapi from 'hapi'
-import Inert from 'inert'
+import Path from 'path'
 import config from './config/config'
 import plugins from './plugins/plugins'
+import routes from './routes/index'
 
-// if new plugins are made, create an index like
-// in config
-import logger from './plugins/logger'
-
-const server = new Hapi.Server();
+const server = new Hapi.Server({
+	connections: {
+		routes: {
+			files: {
+				relativeTo: Path.join(__dirname, '../app')
+			}
+		},
+	}
+});
 
 server.connection({
 	host: config.host,
 	port: config.port
 });
 
-
+function registerRoutes() {
+	server.route(routes);
+}
 
 function registerPlugins(callback) {
 	for (let i in plugins) {
@@ -36,12 +43,21 @@ function registerPlugins(callback) {
 	callback();
 }
 
-registerPlugins(() => {
-	server.start(() => {
-		server.log(['info', `Server started at ${server.info.uri}`]);
-	});
 
-});
+
+function start() {
+	return Promise.all([
+		registerPlugins(() => {}),
+		registerRoutes(() => {})
+	]).then(() => {
+		server.start(() => {
+			server.log(['info'], `The application is up and running at ${server.info.uri}`);
+		});
+	});
+}
+
+start();
+
 
 
 export default server;
