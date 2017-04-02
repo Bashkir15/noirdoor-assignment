@@ -1,5 +1,4 @@
 import Winston from 'winston'
-import GoodWinstonReporter from 'good-winston-reporter'
 
 module.exports = {
 	host: 'localhost',
@@ -8,7 +7,7 @@ module.exports = {
 
 	logger: {
 		reporters: [{
-			reporter: GoodWinstonReporter,
+			reporter: require('good-winston-reporter'),
 			events: {
 				log: '*',
 				request: '*',

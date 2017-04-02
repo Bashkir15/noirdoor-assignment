@@ -1,10 +1,37 @@
 import Good from 'good'
-import config from '../config'
+import Winston from 'winston'
+import config from '../config/config'
 
-export default {
+const options = {
+	ops: {
+		interval: 1000
+	},
+
+	reporters: {
+		reporters: [
+			{
+				module: 'good-squeeze',
+				name: 'Squeeze',
+				args: [{
+					log: '*',
+					response: '*'
+				}],
+			},
+
+			{
+				module: 'good-console'
+			},
+
+			'stdout'
+		]
+	}
+};
+
+module.exports = {
 	plugin: {
 		register: Good,
-		options: config.logger
+		name: 'good',
+		options: options
 	},
 
 	callback: (server, error) => {
