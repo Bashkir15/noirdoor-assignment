@@ -29,5 +29,15 @@ export default [
 				index: true
 			}
 		}
+	},
+
+	{
+		method: 'GET',
+		path: '/music/{file}',
+		handler: {
+			proxy: {
+				uri: 'https://s3.us-east-2.amazonaws.com/noirdoor-test/{file}'
+			}
+		}
 	}
 ];

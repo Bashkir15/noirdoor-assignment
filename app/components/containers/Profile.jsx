@@ -18,7 +18,7 @@ class Home extends React.Component {
 					album: 'Giblet Gravy',
 					time: '4:30',
 					//location: 'app/static/music/DIAD1116.mp3'
-					songPath: 'https://s3.us-east-2.amazonaws.com/noirdoor-test/billiesbounce.mp3'
+					songPath: 'music/billiesbounce.mp3'
 				},
 
 				{
