@@ -14,6 +14,8 @@ class Player extends React.Component {
 			song: null,
 			pos: 0
 		}
+
+		this.handlePosChange = this.handlePosChange.bind(this);
 	}
 
 	handlePosChange(e) {
@@ -61,7 +63,9 @@ class Player extends React.Component {
 								name={track.name}
 								songPath={track.songPath} 
 								album={track.album} 
-								time={track.time} 
+								time={track.time}
+								isPlaying={this.state.playing}
+								selectedSong={this.state.song} 
 								handleTogglePlay={this.togglePlay.bind(this, track)}
 							/>
 						)}

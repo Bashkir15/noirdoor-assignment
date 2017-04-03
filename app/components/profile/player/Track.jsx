@@ -20,7 +20,7 @@ class Track extends React.Component {
 					</div>
 
 					<div className='track-button' onClick={this.props.handleTogglePlay}>
-						<span className='icon-play_arrow'></span>
+						<span className={this.props.isPlaying && this.props.selectedSong == this.props.songPath ? 'icon-pause' : 'icon-play_arrow'}></span>
 					</div>
 				</div>
 

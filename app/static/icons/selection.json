@@ -328,6 +328,33 @@
     {
       "icon": {
         "paths": [
+          "M598 214h170v596h-170v-596zM256 810v-596h170v596h-170z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "pause"
+        ],
+        "defaultCode": 57396,
+        "grid": 24
+      },
+      "attrs": [],
+      "properties": {
+        "order": 24,
+        "ligatures": "pause",
+        "id": 545,
+        "prevSize": 24,
+        "code": 57396,
+        "name": "pause"
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 545
+    },
+    {
+      "icon": {
+        "paths": [
           "M512 554c114 0 342 58 342 172v128h-684v-128c0-114 228-172 342-172zM512 170c94 0 170 78 170 172s-76 170-170 170-170-76-170-170 76-172 170-172zM512 636c-126 0-260 62-260 90v46h520v-46c0-28-134-90-260-90zM512 252c-50 0-90 40-90 90s40 88 90 88 90-38 90-88-40-90-90-90z"
         ],
         "attrs": [],
@@ -459,6 +486,60 @@
       "setIdx": 0,
       "setId": 2,
       "iconIdx": 716
+    },
+    {
+      "icon": {
+        "paths": [
+          "M256 256h512v512h-512v-512z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "stop"
+        ],
+        "defaultCode": 57415,
+        "grid": 24
+      },
+      "attrs": [],
+      "properties": {
+        "order": 23,
+        "ligatures": "stop",
+        "id": 720,
+        "prevSize": 24,
+        "code": 57415,
+        "name": "stop"
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 720
+    },
+    {
+      "icon": {
+        "paths": [
+          "M682 214h214v256h-214v-256zM426 470v-256h214v256h-214zM682 768v-256h214v256h-214zM426 768v-256h214v256h-214zM170 768v-256h214v256h-214zM170 470v-256h214v256h-214z"
+        ],
+        "attrs": [],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "tags": [
+          "view_module"
+        ],
+        "defaultCode": 59632,
+        "grid": 24
+      },
+      "attrs": [],
+      "properties": {
+        "order": 25,
+        "ligatures": "view_module",
+        "id": 809,
+        "prevSize": 24,
+        "code": 59632,
+        "name": "view_module"
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 809
     },
     {
       "icon": {

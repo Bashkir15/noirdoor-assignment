@@ -14,27 +14,35 @@ class Home extends React.Component {
 			tracks: [
 				{
 					num: '1',
-					name: 'Test',
-					album: 'Stuff',
+					name: 'Billies Bounce',
+					album: 'Giblet Gravy',
 					time: '4:30',
 					//location: 'app/static/music/DIAD1116.mp3'
-					songPath: 'http://wavesurfer-js.org/example/media/demo.mp3'
+					songPath: 'https://s3.us-east-2.amazonaws.com/noirdoor-test/billiesbounce.mp3'
 				},
 
 				{
 					num: '2',
-					name: 'Test2',
-					album: 'Blah',
+					name: 'Constellation',
+					album: 'Memorial, Vol. 1',
 					time: '2:30',
-					songPath: 'app/static/music/MER11082p.mp3'
+					songPath: 'https://s3.us-east-2.amazonaws.com/noirdoor-test/constellation.mp3'
 				},
 
 				{
 					num: '3',
-					name: 'Test3',
-					album: 'Grr',
+					name: 'Summertime',
+					album: 'Charlie Parker with String',
 					time: '1:13',
-					songPath: 'app/static/music/MER11082p.mp3'
+					songPath: 'https://s3.us-east-2.amazonaws.com/noirdoor-test/summertime.mp3'
+				},
+
+				{
+					num: '4',
+					name: 'Thriving on a Riff',
+					album: 'Ornithology',
+					time: 'adfasf',
+					songPath: 'https://s3.us-east-2.amazonaws.com/noirdoor-test/thrivingonariff.mp3'
 				}		
 			],
 
