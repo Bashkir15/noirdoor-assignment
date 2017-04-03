@@ -33,7 +33,9 @@ class Nav extends React.Component {
 
 				<div className='nav-right'>
 					<div className='nav-item nav-search'>
-						<button>Icon</button>
+						<button>
+							<span className='icon-search'></span>
+						</button>
 					</div>
 				</div>
 			</nav>

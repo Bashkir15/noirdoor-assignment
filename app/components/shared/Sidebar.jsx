@@ -1,29 +1,36 @@
 import React, { PropTypes } from 'react'
 
+import '../../static/styles/shared/components/sidebar'
+
 class Sidebar extends React.Component {
 	render() {
 		return (
 			<div className='sidebar'>
 				<div className='sidebar-header'>
-					<p>Icon</p>
+					<span className='icon-headset'></span>
 				</div>
 
 				<div className='sidebar-list'>
 					<ul>
-						<li>Icon</li>
-						<li>Icon</li>
-						<li>Icon</li>
-						<li>Icon</li>
-						<li>Icon</li>
-					</ul>
-				</div>
+						<li>
+							<span className='icon-person_outline'></span>
+						</li>
 
-				<div className='sidebar-footer'>
-					<ul>
-						<li>Something</li>
-						<li>Something</li>
-						<li>Something</li>
-						<li>Something</li>
+						<li>
+							<span className='icon-mail_outline'></span>
+						</li>
+
+						<li>
+							<span className='icon-star_border'></span>
+						</li>
+
+						<li>
+							<span className='icon-notifications_none'></span>
+						</li>
+
+						<li>
+							<span className='icon-favorite_border'></span>
+						</li>
 					</ul>
 				</div>
 			</div>

@@ -14,7 +14,7 @@ export default [
 		path: '/app/{file*}',
 		handler: {
 			directory: {
-				path: '/',
+				path: '../app',
 				index: true
 			}
 		}

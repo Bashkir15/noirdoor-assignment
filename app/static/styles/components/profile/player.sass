@@ -1,0 +1,79 @@
+.player-container
+	width: 75%
+	padding-top: 80px
+	margin: 0 auto
+
+	h2
+		font-family: 'Montserrat'
+		font-weight: 400
+		letter-spacing: 3px
+		font-size: 22px
+		line-height: 26px
+
+.track-list-container
+	padding-top: 40px
+
+.track-list-headers
+	display: flex
+	align-items: stretch
+	padding: 5px 13px 5px 80px
+	border-bottom: 1px solid rgba(0,0,0,0.12)
+
+	> div
+		display: flex
+		flex: 1
+
+		p
+			font-family: 'Open Sans'
+			font-weight: normal
+			font-size: 17px
+
+		&:nth-of-type(4)
+			margin-right: -10px
+
+
+.track-list-body
+	display: flex
+	flex-direction: column
+
+.single-track
+	display: flex
+	border-bottom: 1px solid rgba(0,0,0,0.2)
+
+	> div
+		&:not(.track-image)
+			display: flex
+			flex: 1
+			align-items: center
+
+			p
+				font-family: 'Open Sans'
+				font-weight: normal
+				font-size: 15px
+
+
+.track-image
+	height: 50px
+	width: 40px
+	margin-right: 38px
+
+	> div
+		height: 50px
+		width: 40px
+		background: rgba(0,0,0,0.2)
+
+.track-button
+	display: flex
+	align-items: center
+	justify-content: center
+
+	&:nth-of-type(even)
+		border-radius: 50%
+		border: 2px solid #666
+		margin-left: 20px
+
+	&:nth-of-type(odd)
+		margin-left: 22px
+
+	span
+		font-size: 20px
