@@ -3,6 +3,7 @@ import React from 'react'
 class Track extends React.Component {
 	constructor(props) {
 		super(props);
+
 	}
 
 	render() {
@@ -18,7 +19,7 @@ class Track extends React.Component {
 						<span className='icon-favorite_border'></span>
 					</div>
 
-					<div className='track-button'>
+					<div className='track-button' onClick={this.props.handleTogglePlay}>
 						<span className='icon-play_arrow'></span>
 					</div>
 				</div>

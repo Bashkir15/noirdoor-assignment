@@ -1,33 +1,34 @@
 import React from 'react'
+import Wavesurfer from 'react-wavesurfer'
 
 import '../../../static/styles/components/profile/player'
 import Track from './Track'
 
 
-const tracks = [
-	{
-		num: '1',
-		name: 'Test',
-		album: 'Stuff',
-		time: '4:30'
-	},
-
-	{
-		num: '2',
-		name: 'Test2',
-		album: 'Blah',
-		time: '2:30'
-	},
-
-	{
-		num: '3',
-		name: 'Test3',
-		album: 'Grr',
-		time: '1:13'
-	}
-];
-
 class Player extends React.Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			playing: false,
+			song: null,
+			pos: 0
+		}
+	}
+
+	handlePosChange(e) {
+		this.setState({
+			pos: e.originalArgs[0]
+		})
+	}
+
+	togglePlay(item) {
+		this.setState({
+			playing: !this.state.playing,
+			song: item.songPath
+		});
+	}
+
 	render() {
 		return (
 			<div className='player-container'>
@@ -53,11 +54,26 @@ class Player extends React.Component {
 					</div>
 
 					<div className='track-list-body'>
-						{tracks.map(track =>
-							<Track key={track.num} num={track.num} name={track.name} album={track.album} time={track.time} />
+						{this.props.tracks.map(track =>
+							<Track 
+								key={track.num} 
+								num={track.num} 
+								name={track.name}
+								songPath={track.songPath} 
+								album={track.album} 
+								time={track.time} 
+								handleTogglePlay={this.togglePlay.bind(this, track)}
+							/>
 						)}
 					</div>
 				</div>
+
+				<Wavesurfer
+					audioFile={this.state.song}
+					pos={this.state.pos}
+					onPosChange={this.handlePosChange}
+					playing={this.state.playing}
+				/>
 			</div>
 		);
 	}

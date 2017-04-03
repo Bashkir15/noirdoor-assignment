@@ -63,7 +63,10 @@ module.exports = {
 	},
 
 	resolve: {
-		extensions: ['.js', '.jsx', '.json', '.sass', '.css']
+		extensions: ['.js', '.jsx', '.json', '.sass', '.css'],
+		alias: {
+			'wavesurfer': path.resolve(__dirname, './node_modules/wavesurfer.js/dist/wavesurfer.js')
+		}
 	},
 
 	devServer: {
