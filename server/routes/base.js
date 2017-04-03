@@ -1,4 +1,7 @@
 import path from 'path'
+import controller from '../controllers/artists'
+
+const artist = controller();
 
 export default [
 	{
@@ -39,5 +42,11 @@ export default [
 				uri: 'https://s3.us-east-2.amazonaws.com/noirdoor-test/{file}'
 			}
 		}
+	},
+
+	{
+		method: 'GET',
+		path: '/artist/{artistName}',
+		config: artist.getOne
 	}
 ];

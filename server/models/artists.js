@@ -22,3 +22,17 @@ const Songs = thinky.createModel('Songs', {
 
 Artist.hasMany(Songs, "songs", "creatorId", "id");
 Songs.belongsTo(Artist, "artist", "creatorId");
+
+Artist.defineStatic('findByName', (name) => {
+	return this.get(name).getJoin({songs: true})
+	.run().then((artist) => {
+		if (artist) {
+			return artist;
+		}
+	})
+});
+
+module.exports = {
+	Artist: Artist:,
+	Songs: Songs
+};

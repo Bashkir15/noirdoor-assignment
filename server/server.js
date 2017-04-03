@@ -3,6 +3,7 @@ import Path from 'path'
 import config from './config/config'
 import plugins from './plugins/plugins'
 import routes from './routes/index'
+import Db from './models/mon'
 
 const server = new Hapi.Server({
 	connections: {

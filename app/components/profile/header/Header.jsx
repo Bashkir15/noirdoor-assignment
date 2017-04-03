@@ -3,22 +3,36 @@ import React, { PropTypes } from 'react'
 import '../../../static/styles/components/profile/header'
 
 class Header extends React.Component {
+	constructor(props) {
+		super(props);
+	}
+
 	render() {
-		return (
-			<div className='artist-header'>
-				<div className='artist-header-image'>
-					<div></div>
+
+		if (this.props.loading) {
+			return (
+				<div>Loading</div>
+			);
+		} else {
+			const artistName = this.props.artist.name.split('-').join(' ');
+			const artistGenre = this.props.artist.genres.join('/');
+
+			return (
+				<div className='artist-header'>
+					<div className='artist-header-image'>
+						<div>
+						</div>
+					</div>
+
+					<div className='artist-header-info'>
+						<h1>{artistName}</h1>
+						<p className='details'>{artistGenre}</p>
+
+						<p>{this.props.artist.bio}</p>
+					</div>
 				</div>
-
-				<div className='artist-header-info'>
-					<h1>Plain Jane</h1>
-					<p className='details'>Alternative Metal Slosh/Tractor Sounds</p>
-
-					<p>Known for her ridiculous antics and catchy, metalic tractor beats Jane is anything but plain. What started as a hobby in childhood would soon take her all over the world in search of an opportunity to share her nails-on-chalkboard esque voice which has quickly become the voice of a generation and a bane to all those who forget to bring their earplugs </p>
-
-				</div>
-			</div>
-		);
+			)
+		}
 	}
 } 
 

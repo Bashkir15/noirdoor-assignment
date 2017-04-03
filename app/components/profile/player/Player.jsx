@@ -27,59 +27,67 @@ class Player extends React.Component {
 	togglePlay(item) {
 		this.setState({
 			playing: !this.state.playing,
-			song: item.songPath
+			song: item.location
 		});
 	}
 
 	render() {
-		return (
-			<div className='player-container'>
-				<h2>Top Tracks</h2>
+		let tNum = 0;
 
-				<div className='track-list-container'>
-					<div className='track-list-headers'>
-						<div>
-							<p>#</p>
+		if (this.props.loading) {
+			return null;
+		} else {
+
+			return (
+
+				<div className='player-container'>
+					<h2>Top Tracks</h2>
+
+					<div className='track-list-container'>
+						<div className='track-list-headers'>
+							<div>
+								<p>#</p>
+							</div>
+
+							<div>
+								<p>Song</p>
+							</div>
+
+							<div>
+								<p>Album</p>
+							</div>
+
+							<div>
+								<p>Time</p>
+							</div>
 						</div>
 
-						<div>
-							<p>Song</p>
-						</div>
-
-						<div>
-							<p>Album</p>
-						</div>
-
-						<div>
-							<p>Time</p>
+						<div className='track-list-body'>
+							{this.props.tracks.map(track =>
+								<Track 
+									key={tNum++}
+									num={tNum}  
+									name={track.name}
+									songPath={track.location} 
+									album={track.album} 
+									time={track.time}
+									isPlaying={this.state.playing}
+									selectedSong={this.state.song} 
+									handleTogglePlay={this.togglePlay.bind(this, track)}
+								/>
+							)}
 						</div>
 					</div>
 
-					<div className='track-list-body'>
-						{this.props.tracks.map(track =>
-							<Track 
-								key={track.num} 
-								num={track.num} 
-								name={track.name}
-								songPath={track.songPath} 
-								album={track.album} 
-								time={track.time}
-								isPlaying={this.state.playing}
-								selectedSong={this.state.song} 
-								handleTogglePlay={this.togglePlay.bind(this, track)}
-							/>
-						)}
-					</div>
+					<Wavesurfer
+						audioFile={this.state.song}
+						pos={this.state.pos}
+						onPosChange={this.handlePosChange}
+						playing={this.state.playing}
+					/>
 				</div>
-
-				<Wavesurfer
-					audioFile={this.state.song}
-					pos={this.state.pos}
-					onPosChange={this.handlePosChange}
-					playing={this.state.playing}
-				/>
-			</div>
-		);
+			);
+		}
 	}
 }
 

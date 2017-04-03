@@ -27,5 +27,11 @@ module.exports = {
 		authKey: '',
 		db: "noirdoor_project",
 		silent: true
+	},
+
+	mongo: {
+		host: 'localhost',
+		port: 27017,
+		db: 'noirdoor'
 	}
 };
